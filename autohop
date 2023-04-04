@@ -1,32 +1,3 @@
-if not game['Loaded'] or not game:GetService('Players')['LocalPlayer'] then
-    game['Loaded']:Wait()
-    game:WaitForChild(game:GetService('Players'))
-    game:GetService('Players'):WaitForChild(game:GetService('Players').LocalPlayer.Name)
-end
-repeat wait() until game:IsLoaded() or game.Players.LocalPlayer or game.Players.LocalPlayer.Character
-print("\n")
-wait(11)
-local LocalPlayer = game.Players.LocalPlayer
-local speaker = LocalPlayer
-    local Humanoid = LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
-    local NewHumanoid = Humanoid:Clone() 
-    NewHumanoid.Parent = LocalPlayer.Character
-    Humanoid:Destroy()
-    NewHumanoid:ChangeState(15)
-    for i,v in pairs(speaker:FindFirstChildOfClass("Backpack"):GetChildren()) do
-        if v:IsA("Tool") and v:FindFirstChild("Handle") then
-            v.Parent = speaker.Character
-local nigger2 = v.Handle
-    nigger2.Transparency = 0.5
-    nigger2.Size = Vector3.new(5, 5, 5)
-    for i,r in pairs(game.Players:GetPlayers()) do
-firetouchinterest(nigger2, r.Character['Head'],0)
---firetouchinterest(nigger2, r.Character['Head'],1)
-        end
-    end
-end
-wait(1)
-for i = 1, 6 do
 local HttpService, TPService = game:GetService"HttpService", game:GetService"TeleportService";
 local OtherServers = HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"..game.PlaceId.."/servers/Public?sortOrder=Asc&limit=100"))
 function joinNew()
@@ -64,4 +35,3 @@ if not server then
 else
 TPService:TeleportToPlaceInstance(game.PlaceId, server)
 end
-  end
